@@ -33,7 +33,7 @@ console.log(a.width)
 a.color = "red"
 console.log(a)
 
-// Array
+// Array(1)
 img = []
 img[0] = 'bear'
 img[1] = 'cat'
@@ -73,3 +73,21 @@ console.log(window)
 const date = new Date();
 // 패턴매칭 : 패턴을 사용해 텍스트를 판별할 때 사용
 var pattern = new RegExp('^abc') 
+
+// Array(2)
+var arr = [1,2,3]
+console.log(arr.length)
+
+for(var i = 0; i<arr.length; i++){
+    console.log(arr[i])
+}
+
+// join
+console.log(arr.join('&'))
+
+// map
+var newArr = arr.map((num) => {
+    return num + 'ok';
+});
+console.log(newArr)
+
