@@ -101,3 +101,52 @@ var isCheck = arr.some((num) => {
     return num < 3;
 })
 console.log(isCheck)
+
+var article1 = {
+    title: '제목1',
+    url: 'http://naver.com',
+};
+
+var articles = [article1];
+console.log(articles)
+
+// 배열 CRUD
+// Create
+var todos = ['운동'];
+var todo = '게임'
+
+// 재정의없이 추가.
+todos.push(todo) 
+console.log(todos)
+
+// Read
+todos.forEach((todo)=>{
+    console.log(todo)
+})
+
+// Update
+var updateTodo = '게임';
+var updadteIndex = todos.findIndex((todo) => {
+   return todo === updateTodo; 
+})
+console.log(updadteIndex);
+todos[updadteIndex] = '공부';
+console.log(todos);
+
+// Delete
+var deleteTodo = '공부';
+var deleteIndex = todos.findIndex((todo)=>{
+    return todo === deleteTodo;
+})
+// splice(index,num) : 배열 index번째부터 num개를 제거한다.
+todos.splice(deleteIndex,1);
+console.log(todos);
+
+var todo = '코딩';
+todos.push(todo);
+var deleteTodo = '운동';
+// filter 특정 조건을 만족하는 새로운 배열을 필요로 할 때 사용. 
+var newTodos = todos.filter((todo) => {
+    return todo !== deleteTodo;
+});
+console.log(newTodos)
