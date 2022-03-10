@@ -91,3 +91,13 @@ var newArr = arr.map((num) => {
 });
 console.log(newArr)
 
+// every & some
+var isCheck = arr.every((num) => {
+    return num < 3;
+})
+console.log(isCheck)
+
+var isCheck = arr.some((num) => {
+    return num < 3;
+})
+console.log(isCheck)
