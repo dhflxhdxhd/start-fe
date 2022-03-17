@@ -1,5 +1,5 @@
 /* 
-
+비동기 함수의 실행 순서를 알아보자.
 */
 
 // 타입변환
@@ -95,3 +95,48 @@ while (isClosed) {
 
 // scope
 // 유효범위
+var nick = 'age';
+function test(){
+    var age=30;
+    console.log(nick,age);
+}
+
+test();
+console.log(age);
+
+// 호이스팅..?
+var name = 'global';
+function test() {
+    console.log(nm);
+    var nm = 'local';
+    console.log(nm);
+}
+
+// function
+// 가변 길이 전달인자
+function sum(){
+    var size = 0;
+    for(var i = 0; i<arguments.length; i++)size += arguments[i];
+
+    console.log(size);
+}
+
+sum(1,2,3,4,5,6)
+
+// 정규표현식 Regular Expression
+// 문자열에 나타나는 특정 문자 조합과 대응시키기 위해 사용되는 패턴
+
+// .test() : 주어진 문자열이 정규 표현식을 만족하는지 판별하고, 불린값으로 return
+var test = 'abc def ghi jkl abc def';
+var testReg = /abc/; // 정규표현식 리터럴 : 슬래시로 패턴을 감싸서 작성
+var result = testReg.test(text);
+
+console.log(result) //true
+
+// 휴대폰 번호 정규식
+var num = 010-0000-0000
+
+var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/
+regPhone.test(num)
+
+
