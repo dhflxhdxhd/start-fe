@@ -140,3 +140,48 @@ var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/
 regPhone.test(num)
 
 
+var todos = [];
+// function create(todo){
+//     todos.push(todo)
+// }
+
+// function read(){
+//     todos.forEach(function(todo){
+//         console.log(todo);
+//     });
+// }
+
+// function update(updateTodo){
+//     todos.findIndex(function(todo){
+//         return todo === updateTodo;
+//     });
+// }
+
+// function del(deleteTodo){
+//     todos.filter(function(todos){
+//         return todo !== deleteTodo;
+//     });
+// }
+
+
+var CRUD = {
+    create : function create(todo){
+        todos.push(todo)
+    },
+    read : function read(){
+        todos.forEach(function(todo){
+            console.log(todo);
+        });
+    },
+    update : function update(updateTodo){
+        todos.findIndex(function(todo){
+            return todo === updateTodo;
+        });
+    },
+    del : function del(deleteTodo){
+        todos.filter(function(todos){
+            return todo !== deleteTodo;
+        });
+    }
+}
+
