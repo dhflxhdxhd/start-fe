@@ -126,6 +126,7 @@ todos.forEach((todo)=>{
 
 // Update
 var updateTodo = '게임';
+// 주어진 판별 함수를 만족하는 배열의 첫번째 요소에 대한 인덱스 반환
 var updadteIndex = todos.findIndex((todo) => {
    return todo === updateTodo; 
 })
