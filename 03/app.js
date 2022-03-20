@@ -140,48 +140,44 @@ var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/
 regPhone.test(num)
 
 
+// CRUD 함수화
 var todos = [];
-// function create(todo){
-//     todos.push(todo)
-// }
-
-// function read(){
-//     todos.forEach(function(todo){
-//         console.log(todo);
-//     });
-// }
-
-// function update(updateTodo){
-//     todos.findIndex(function(todo){
-//         return todo === updateTodo;
-//     });
-// }
-
-// function del(deleteTodo){
-//     todos.filter(function(todos){
-//         return todo !== deleteTodo;
-//     });
-// }
-
-
-var CRUD = {
-    create : function create(todo){
-        todos.push(todo)
-    },
-    read : function read(){
-        todos.forEach(function(todo){
-            console.log(todo);
-        });
-    },
-    update : function update(updateTodo){
-        todos.findIndex(function(todo){
-            return todo === updateTodo;
-        });
-    },
-    del : function del(deleteTodo){
-        todos.filter(function(todos){
-            return todo !== deleteTodo;
-        });
-    }
+function create(todo){
+    todos.push(todo)
 }
+
+function read(){
+    todos.forEach(function(todo){
+        console.log(todo);
+    });
+}
+
+function update(updateTodo, newTodo){
+    var updateIndex = todos.findIndex((todo) => {
+        return todo === updateTodo;
+    });
+
+    todos[updateIndex] = newTodo;
+}
+
+function del(deleteTodo){
+    todos = todos.filter((todo) => {
+        return todo !==  deleteTodo;
+    }
+);}
+
+create('game')
+create('music')
+console.log(todos)
+
+read()
+
+update('game','food')
+console.log(todos)
+
+del('music')
+console.log(todos)
+
+
+
 
