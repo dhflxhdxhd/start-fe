@@ -40,7 +40,7 @@ var todos = [];
 
 
 var CRUD = {
-    create : function create(...todo){
+    create : function create(){
         var n = arguments.length
         if (n>1) {
             for ( var cnt = 0;  cnt < n; cnt++){
