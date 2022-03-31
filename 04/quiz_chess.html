@@ -11,34 +11,48 @@
 <script>
     var board = document.getElementById("board");
     board.style.width = "400px"
+    board.style.height = "412px"
+    board.style.border = "5px solid black"
     var check = "odd";
+    var check_color = "black"
     for(var i=0; i<4; i++){
         for(var j=0; j<4; j++){
+            console.log(check_color)
             var span = document.createElement("span");
-            if (check == "odd"){
-                
-            }
-            if (className === "black"){
+            if (check_color === "black"){
                 span.style.border = "none";
                 span.style.backgroundColor = "black";
                 span.className = "black";
-                check = "white";
-            }else{
+                check_color = "white";
+            }else if (check_color === "white"){
                 span.style.border = "none";
                 span.style.backgroundColor = "white";
                 span.className = "white";
-                check = "black";
+                check_color = "black";
             }
             span.style.display = "inline-block";
             span.style.width = "100px";
             span.style.height = "100px";
             board.appendChild(span);
         }
-        if (check == "odd"){
+
+        if (check === "odd"){
             check = "even";
+            check_color = "white";
         }else{
             check = "odd";
+            check_color = "black";
         }
+
+    function turnRed(event){
+        event.target.style.backgroundColor = "red";
+
+    }
+    
+    var span = document.querySelector("span");
+    span.addEventListener("click",turnRed);
+    
+        
     }
 </script>
 </body>
