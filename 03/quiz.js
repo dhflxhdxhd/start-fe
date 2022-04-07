@@ -59,21 +59,19 @@
 //     );},
 // }
 
-let input = window.prompt("숫자를 입력하세요")
-console.log(input)
-num = [] 
-sum = 0
+// var sum = 0;
 
-
-
-
-// if (input != null){
-//     num.push(input)
-// }else {
-//     for (let i =0; i<num.length; i++){
-//         sum += num[i]
-//     }
-
-//     let result = window.prompt("숫자의 합",sum)
+// while (true) {
+//   var input = prompt('숫자를 입력하세요');
+//   if (input !== null) {
+//     input = parseInt(input, 10);
+//     sum += input;
+//   } else {
+//     alert('숫자의 합 ' + sum);
+//     break;
+//   }
 // }
+
+
+
 
