@@ -11,3 +11,5 @@ btn.addEventListener(event => {
 })
 
 //구조분해할당 예제 코드
+const members  = ["HY", "CG"];
+const [member1, member2] = members;
