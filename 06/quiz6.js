@@ -1,31 +1,28 @@
-const input = document.getElementById("num");
-const btn = document.getElementById("btn");
-const result = document.getElementById("result");
+const guguInput = document.getElementById("num");
+const guguBtn = document.getElementById("btn");
+const guguResult = document.getElementById("result");
 
-// 마지막 값만 출력됨
-// 리스트로 추가시켜서 출력될 수 있도록해야함.
-function paintList(text){
-    const li = document.createElement("li");
-    
-}
-
-
+let result = [];
 
 function gugu(num){
     for (let j = 1; j < 10; j++ ){
-        result.innerHTML = `${num} X ${j} = ${num*j}`
-        console.log(`${num} X ${j} = ${num*j} `)
+        result.push(`${num} X ${j} = ${num*j}`)
+        // console.log(`${num} X ${j} = ${num*j} `)
     }
 }
 
 function print_gugu(){
-    btn.addEventListener("click", e =>{
-        if(isNaN(input.value)) {
-            alert("숫자를 입력하세요");
-        }else{
-            gugu(input.value)
-        }
-    })
+    const num  = parseInt(guguInput.value);
+ 
+    // debugger;
+    if (isNaN(num)){
+        alert("숫자를 입력하세요");
+    }else{
+        gugu(num);
+        guguResult.innerHTML = result.join("<br>");
+    }
+    result = [];
 }
 
-print_gugu()
+guguBtn.addEventListener("click", print_gugu);
+
