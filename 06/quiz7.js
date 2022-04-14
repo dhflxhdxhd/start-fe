@@ -32,6 +32,7 @@ function clickBugEvent(event){
 
         if (score_life === 0){
             alert("gameover");
+            location.reload();
         }
 
     }
