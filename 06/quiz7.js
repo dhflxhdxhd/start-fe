@@ -18,10 +18,11 @@ function showBox(){
 
 function clickBugEvent(event){
     const target = event.target;
+    // console.log(typeof(point.innerText));
     let score_point = parseInt(point.innerText);
     let score_life = parseInt(life.innerText);
     
-    if (target === event.currentTarget.querySelector("#bug")){
+    if (target === bug){
         score_point ++;
         point.innerHTML = score_point;
         
