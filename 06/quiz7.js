@@ -25,16 +25,15 @@ function clickBugEvent(event){
     if (target === bug){
         score_point ++;
         point.innerHTML = score_point;
-        
+
     }else {
         score_life --;
         life.innerHTML = score_life;
+    }
 
-        if (score_life === 0){
-            alert("gameover");
-            location.reload();
-        }
-
+    if (score_life === 0){
+        alert("gameover");
+        location.reload();
     }
 }
 
