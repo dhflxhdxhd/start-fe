@@ -16,17 +16,17 @@ function showBox(){
     bug.style.top = `${y}px`;
 }
 
-function clickBoxEvent(event){
+function clickBugEvent(event){
     const target = event.target;
     let score_point = parseInt(point.innerText);
     let score_life = parseInt(life.innerText);
     
     if (target === event.currentTarget.querySelector("#bug")){
-        score_point += 1
+        score_point ++;
         point.innerHTML = score_point;
         
     }else {
-        score_life -= 1
+        score_life --;
         life.innerHTML = score_life;
 
         if (score_life === 0){
@@ -37,8 +37,8 @@ function clickBoxEvent(event){
 }
 
 function init(){
-    setInterval(showBox, 2000);
-    box.addEventListener('click', clickBoxEvent);
+    setInterval(showBox, 1000);
+    box.addEventListener('click', clickBugEvent);
 }
 
 init();
