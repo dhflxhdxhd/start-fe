@@ -29,11 +29,11 @@ function clickBugEvent(event){
     }else {
         score_life --;
         life.innerHTML = score_life;
-    }
 
-    if (score_life === 0){
-        alert("gameover");
-        location.reload();
+        if (score_life === 0){
+            alert("gameover");
+            location.reload();
+        }
     }
 }
 
