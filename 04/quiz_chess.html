@@ -1,56 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset=utf-8 />
-    <title>source</title>
-</head>
-<body>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<div id="board"></div>
-
-<script>
-    var board = document.getElementById("board");
-    board.style.width = "400px"
-    board.style.height = "412px"
-    board.style.border = "5px solid black"
-    var check = "odd";
-    var check_color = "black"
-    for(var i=0; i<4; i++){
-        for(var j=0; j<4; j++){
-            console.log(check_color)
-            var span = document.createElement("span");
-            if (check_color === "black"){
-                span.style.border = "none";
-                span.style.backgroundColor = "black";
-                span.className = "black";
-                check_color = "white";
-            }else if (check_color === "white"){
-                span.style.border = "none";
-                span.style.backgroundColor = "white";
-                span.className = "white";
-                check_color = "black";
-            }
-            span.style.display = "inline-block";
-            span.style.width = "100px";
-            span.style.height = "100px";
-            board.appendChild(span);
-        }
-
-        if (check === "odd"){
-            check = "even";
-            check_color = "white";
-        }else{
-            check = "odd";
-            check_color = "black";
-        }
-
-    function turnRed(event){
-        event.target.style.backgroundColor = "red";
-
-    }
-    
-    span.addEventListener("click",turnRed); 
-    }
-</script>
-</body>
+    <title>quiz2</title>
+    <style>
+      .wrap {
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        border: 3px solid #ddd;
+      }
+      .wrap > div {
+        width: 100px;
+        height: 100px;
+        float: left;
+      }
+      .white {
+        background-color: #eee;
+      }
+      .black {
+        background-color: #000;
+      }
+      .select {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>quiz2</h2>
+    <div class="wrap">
+      <!-- <div class="white"></div>
+      <div class="black"></div>
+      <div class="white"></div>
+      <div class="black"></div>
+      <div class="black"></div>
+      <div class="white"></div>
+      <div class="black"></div>
+      <div class="white"></div>
+      <div class="white"></div>
+      <div class="black"></div>
+      <div class="white"></div>
+      <div class="black"></div>
+      <div class="black"></div>
+      <div class="white"></div>
+      <div class="black"></div>
+      <div class="white"></div> -->
+    </div>
+    <script src="quiz_chess.js"></script>
+  </body>
 </html>

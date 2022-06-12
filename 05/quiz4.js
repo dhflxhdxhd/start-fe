@@ -1,33 +1,22 @@
-const box = document.querySelector("#box")
-let checkDrag = false;
-let boxX = 0;
-let boxY = 0;
-let offset = {boxX, boxY};  
+const box = document.querySelector('#box')
 
-function drag(){
-    function mousedown(){
-        box.addEventListener('mousedown',(event)=>{
-            checkDrag = true;
-            offset.boxX = box.offsetLeft - event.clientX;
-            offset.boxY = box.offsetTop - event.clientY;
-        })
-    }
-    
-    function mousemove(){
-        box.addEventListener('mousemove', (event)=>{
-            if(checkDrag){
-                box.style.left = `${event.clientX + offset.boxX}px`; 
-                box.style.top = `${event.clientY + offset.boxY}px`;
-            }
-        })
-    }
-    
-    function mouseup(){
-        box.addEventListener('mouseup', ()=>{
-            checkDrag = false;
-        })
-    }
-}
+let isMouseDown = false;
+let mouseX = 0;
+let mouseY = 0;
 
-drag();
+box.addEventListener('mousedown', function(event) {
+    isMouseDown = true;
+    mouseX = event.clientX - box.getBoundingClientRect().left;
+    mouseY = event.clientY - box.getBoundingClientRect().top;
+});
 
+box.addEventListener('mousemove', function(event) {
+    if (isMouseDown) {
+        box.style.left = event.clientX - mouseX + 'px';
+        box.style.top = event.clientY - mouseY + 'px';
+    }
+})
+
+box.addEventListener('mouseup', function() {
+    isMouseDown = false;
+});
