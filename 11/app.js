@@ -36,16 +36,6 @@ function search() {
   });
 }
 
-// $searchButton.addEventListener('click', search);
-// $query.addEventListener('keydown', (event) => {
-//   if (event.key !== 'Enter') return;
-//   search();
-
-//   // if (event.key === 'Enter') {
-//   //   search();
-//   // }
-// });
-
 $searchForm.addEventListener('submit', (event) => {
   if (!isSubmit) {
     search();
@@ -58,7 +48,7 @@ $searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
 });
 
-
+// 더보기 기능
 $moreBtn.addEventListener('click', () => {
   $docs.innerHTML += '<hr>';
   pageNum++;
