@@ -1,32 +1,33 @@
+<!-- 드래그박스 -->
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>quiz4</title>
+    <title>Document</title>
+    <style>
+        body{
+          background-color: black;
+          color: #fff;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ffdd59;
+            background-color: #ffdd59;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-weight: bolder;
+        }
+        
+    </style>
   </head>
-  <style>
-      *{
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-      body{
-          width: 100vw;
-          height: 100vh;
-      }
-      #box {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #7ed6df;
-          width: 100px;
-          height: 100px;
-          color: white;
-          cursor: pointer;
-      }
-  </style>
   <body>
+    <div id="box">
+      Drag me!
+    </div>
+
     <ol>
       <li>박스를 누르면 드래그가 시작됩니다 (mousedown 이벤트)</li>
       <li>
@@ -35,10 +36,6 @@
       </li>
       <li>클릭을 해제하면 드래그가 멈춥니다 (mouseup 이벤트)</li>
     </ol>
-
-    <div class="box-container">
-        <div id="box">Drag ME!</div>    
-    </div>
     <script src="quiz4.js"></script>
   </body>
 </html>
