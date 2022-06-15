@@ -1,36 +1,32 @@
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const distPath = path.join(__dirname, 'dist');
-
 module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
+  mode: 'none',
+  entry: './todoList.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
   devServer: {
-    static: {
-      directory: distPath,
-    },
-    compress: true,
     port: 9000,
   },
-  output: {
-    filename: 'main.js',
-    path: distPath,
-  },
-
-  plugins: [
-    // npm i html-webpack-plugin -D
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
   module: {
-    // npm i css-loader style-loader -D
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
+        test: /\.css$/,
+        use: [
+            { loader: MiniCssExtractPlugin.loader },
+            "css-loader"
+          ]
+      }
+    ]
   },
-};
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+        template: 'index.html',
+      }),
+  ],
+}
